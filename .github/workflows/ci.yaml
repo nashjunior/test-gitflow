@@ -20,6 +20,9 @@ jobs:
       # starting tests
       - name: start tests
         uses: artiomtr/jest-coverage-report-action@v2.0-rc.5
+        with:
+          package-manager: yarn
+
 
      
       
