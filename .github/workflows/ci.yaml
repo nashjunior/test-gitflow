@@ -15,8 +15,7 @@ jobs:
         #install packages
         run: yarn install
       - name: typescript
-        uses: iCrawl/action-tsc@v1
-      
+        uses: iCrawl/action-tsc@v1  
         #starting tests
       - name: start tests
         uses: dorny/test-reporter@v1.5.0
