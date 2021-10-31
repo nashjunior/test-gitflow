@@ -19,7 +19,7 @@ jobs:
         uses: icrawl/action-tsc@v1
       # starting tests
       - name: start tests
-        run: yarn test
+        run: yarn test --all
 
      
       

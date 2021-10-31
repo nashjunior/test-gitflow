@@ -5,6 +5,7 @@
   "license": "MIT",
   "scripts": {
     "test": "jest --runInBand --onlyChanged  --passWithNoTests",
+    "test:all" : "jest --runInBand  --passWithNoTests",
     "dev": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules --ignore-watch src/database  --ignore-watch src/tests src/index.ts"
   },
   "devDependencies": {
