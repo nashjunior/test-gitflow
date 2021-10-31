@@ -1,0 +1,20 @@
+{
+  "name": "gitflow",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest --runInBand --onlyChanged  --passWithNoTests"
+  },
+  "devDependencies": {
+    "@types/node": "^16.11.6",
+    "jest": "^27.3.1",
+    "ts-node": "^10.4.0",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.4.4"
+  },
+  "dependencies": {
+    "@types/jest": "^27.0.2",
+    "ts-jest": "^27.0.7"
+  }
+}
