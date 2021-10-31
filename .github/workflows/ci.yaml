@@ -19,9 +19,9 @@ jobs:
         uses: icrawl/action-tsc@v1
       # starting tests
       - name: start tests
-        uses: artiomtr/jest-coverage-report-action@v2.0-rc.5
+        uses: mattallty/jest-github-action@v1
         with:
-          package-manager: yarn
+          test-command: "yarn test"
 
 
      
