@@ -9,6 +9,7 @@ jobs:
 
       #set node version
       - name: node-version
+        uses: actions/setup-node@v1
         with:
           node-version: 14
       - name: install packages
