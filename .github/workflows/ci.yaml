@@ -5,6 +5,9 @@ on:
     - develop
 jobs:
   build-test:
+    strategy:
+      matrix:
+        node-versions: ['12', '14']
     name: Build & Test
     runs-on: ubuntu-latest
     steps: 
@@ -14,7 +17,7 @@ jobs:
       - name: install node v12
         uses: actions/setup-node@v1
         with:
-          node-version: 12
+          node-version: ${{ matrix.node-versions }}
       - name: install packages
         run: yarn install
       # compiling typescript
