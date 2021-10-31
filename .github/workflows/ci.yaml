@@ -5,13 +5,22 @@ jobs:
     name: Build & Test
     runs-on: ubuntu-latest
     steps: 
-      - uses: actions/checkout@v1
-      - name: install node v12
-        uses: actions/setup-node@v1
-        with:
-         node-version: 12
-      - name: yarn
-        run: yarn install
-      - name: tsc
-        uses: icrawl/action-tsc@v1
+      - uses: actions/checkout@v2
 
+      #set node version
+      - name: node-version
+        with:
+          node-version: 14
+      - name: install packages
+        #install packages
+        run: yarn install
+      - name: typescript
+        uses: iCrawl/action-tsc@v1
+      
+        #starting tests
+      - name: start tests
+        uses: dorny/test-reporter@v1.5.0
+        run: yarn test
+      - name: start app
+        run: yarn dev
+      
