@@ -1,5 +1,8 @@
 name: ci-workflow-typescript-test
-on: [push]
+on: 
+ pull_request:
+   branches:
+    - develop
 jobs:
   build-test:
     name: Build & Test
