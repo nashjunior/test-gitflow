@@ -5,19 +5,25 @@
   "license": "MIT",
   "scripts": {
     "test": "jest --runInBand --onlyChanged  --passWithNoTests",
-    "test:all" : "jest --runInBand  --passWithNoTests",
-    "dev": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules --ignore-watch src/database  --ignore-watch src/tests src/index.ts"
+    "test:all": "jest --runInBand  --passWithNoTests --coverage",
+    "dev": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules --ignore-watch src/database  --ignore-watch src/tests src/index.ts",
+    "make-badges": "istanbul-badges-readme",
+    "make-badges-silent": "istanbul-badges-readme --silent",
+    "make-badges-custom-coverage-dir": "istanbul-badges-readme --coverageDir='./my-custom-coverage'",
+    "make-badges-custom-readme-dir": "istanbul-badges-readme --readmeDir='./my-custom-readme'"
   },
   "devDependencies": {
     "@types/node": "^16.11.6",
+    "istanbul-badges-readme": "^1.6.0",
     "jest": "^27.3.1",
     "ts-node": "^10.4.0",
     "ts-node-dev": "^1.1.8",
     "tsconfig-paths": "^3.11.0",
-    "typescript": "^4.4.4"
-  },
-  "dependencies": {
+    "typescript": "^4.4.4",
     "@types/jest": "^27.0.2",
     "ts-jest": "^27.0.7"
+  },
+  "dependencies": {
+    
   }
 }
