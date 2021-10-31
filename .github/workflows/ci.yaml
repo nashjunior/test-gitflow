@@ -5,9 +5,7 @@ on:
     - develop
 jobs:
   build-test:
-    strategy:
-      matrix:
-        node-versions: ['12', '14']
+    
     name: Build & Test
     runs-on: ubuntu-latest
     steps: 
@@ -17,7 +15,7 @@ jobs:
       - name: install node v12
         uses: actions/setup-node@v1
         with:
-          node-version: ${{ matrix.node-versions }}
+          node-version: 14
       - name: install packages
         run: yarn install
       # compiling typescript
@@ -30,6 +28,17 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           test-command: "yarn test:all && yarn make-badges"
+      # making docker
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v1
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+      - name: Build and push
+        id: docker_build
+        uses: docker/build-push-action@v2
+        with:
+          push: true
+          tags: nashjunior/git-workflow:latest
 
 
      
